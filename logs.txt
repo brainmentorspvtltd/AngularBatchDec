@@ -1,0 +1,32 @@
+var counter = 1;
+console.log("$$$$$$$$$$$$$$$$");
+var getReturnValue = setTimeout(()=>{
+	counter++;
+	if(counter==2){
+	
+	console.log("Counter is ",counter);
+	return "Counter is ",counter;    
+}
+	
+},5000);
+console.log("********************");
+console.log("%%%%%%%%%%%%%%%%%%%%");
+
+
+
+var pr = new Promise((resolve,reject)=>{
+	setTimeout(()=>{
+	counter++;
+	if(counter==2){
+	
+	console.log("Counter is ",counter);
+	resolve("Counter is "+counter);    
+}
+	
+},15000);
+});
+console.log("********************");
+console.log("%%%%%%%%%%%%%%%%%%%%");
+
+
+pr.then((data)=>console.log("Data is ",data)).catch(err=>console.log("Error is ",err));
